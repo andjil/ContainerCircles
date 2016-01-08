@@ -9,7 +9,7 @@ var Container = (function () {
     };
     Container.circles = [];
     return Container;
-}());
+})();
 var Circle = (function () {
     function Circle() {
     }
@@ -34,11 +34,12 @@ var Circle = (function () {
         configurable: true
     });
     return Circle;
-}());
+})();
 var Scalar = (function () {
     function Scalar(cordinates) {
         this.cordinates = cordinates;
     }
     return Scalar;
-}());
+})();
 var scalar = new Scalar(1, 1);
+//# sourceMappingURL=Container.js.map

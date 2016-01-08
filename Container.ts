@@ -9,8 +9,6 @@ class Container {
   }
 }
 
-
-
 class Circle {
   private _direction:number;
   private _cordinates:{x: number; y: number;};
