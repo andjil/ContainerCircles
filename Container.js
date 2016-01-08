@@ -6,6 +6,16 @@ var Container = (function () {
         this.guideCircle(circle);
     };
     Container.prototype.guideCircle = function (circle) {
+        circle.direction = this.getRandomNumber(180);
+        circle.cordinates = { x: 0, y: 50 };
+    };
+    Container.prototype.getRandomNumber = function (maxNumber) {
+        return Math.ceil(Math.random() * maxNumber);
+    };
+    Container.prototype.drawCircles = function () {
+        for (var i = 0; i < Container.circles.length; i++) {
+            var cordinates = Container.circles[i].cordinates;
+        }
     };
     Container.circles = [];
     return Container;
@@ -33,12 +43,20 @@ var Circle = (function () {
         enumerable: true,
         configurable: true
     });
+    Object.defineProperty(Circle.prototype, "speed", {
+        get: function () {
+            return this._speed;
+        },
+        set: function (speed) {
+            this._speed = speed;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Circle.prototype.updateCordinates = function () {
+    };
     return Circle;
 }());
-var Scalar = (function () {
-    function Scalar(cordinates) {
-        this.cordinates = cordinates;
-    }
-    return Scalar;
-}());
-var scalar = new Scalar(1, 1);
+var container = new Container();
+var circle = new Circle();
+container.enter(circle);
